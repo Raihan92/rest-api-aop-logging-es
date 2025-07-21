@@ -9,8 +9,11 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 @Configuration
 public class WebMvcConfig implements WebMvcConfigurer {
 
-    @Autowired
-    private RequestResponseInterceptor requestResponseInterceptor;
+    private final RequestResponseInterceptor requestResponseInterceptor;
+
+    public WebMvcConfig(RequestResponseInterceptor requestResponseInterceptor) {
+        this.requestResponseInterceptor = requestResponseInterceptor;
+    }
 
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
