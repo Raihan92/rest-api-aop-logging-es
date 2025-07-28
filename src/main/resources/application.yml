@@ -11,3 +11,7 @@ spring:
 logging:
   logstash:
     destination: localhost:5044
+
+springdoc:
+  swagger-ui:
+    path: /swagger-ui
